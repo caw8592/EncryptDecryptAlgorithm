@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt.csproj",
-      "projectName": "COPADS_Project3_EncryptDecrypt",
-      "projectPath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt.csproj",
+      "projectUniqueName": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/Lfsr.csproj",
+      "projectName": "Lfsr",
+      "projectPath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/Lfsr.csproj",
       "packagesPath": "/Users/caiden/.nuget/packages/",
       "outputPath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/",
       "projectStyle": "PackageReference",

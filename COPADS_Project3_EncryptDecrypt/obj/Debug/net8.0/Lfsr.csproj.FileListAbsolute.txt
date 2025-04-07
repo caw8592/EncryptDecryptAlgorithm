@@ -1,0 +1,15 @@
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.GeneratedMSBuildEditorConfig.editorconfig
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.AssemblyInfoInputs.cache
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.AssemblyInfo.cs
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.csproj.CoreCompileInputs.cache
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.sourcelink.json
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/Lfsr
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/Lfsr.deps.json
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/Lfsr.runtimeconfig.json
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/Lfsr.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/Lfsr.pdb
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/refint/Lfsr.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.pdb
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/Lfsr.genruntimeconfig.cache
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/ref/Lfsr.dll
