@@ -28,3 +28,10 @@ C:/Users/caide/Desktop/Projects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_E
 /Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/COPADS_Project3_EncryptDecrypt.pdb
 /Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/COPADS_Project3_EncryptDecrypt.genruntimeconfig.cache
 /Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/ref/COPADS_Project3_EncryptDecrypt.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/COPADS_Project3_EncryptDecrypt.csproj.AssemblyReference.cache
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/SkiaSharp.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/runtimes/osx/native/libSkiaSharp.dylib
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/runtimes/win-x64/native/libSkiaSharp.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/bin/Debug/net8.0/runtimes/win-x86/native/libSkiaSharp.dll
+/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/Debug/net8.0/COPADS_P.A88D1430.Up2Date

@@ -1,4 +1,4 @@
-﻿
+﻿using SkiaSharp;
 
 namespace Project {
     class Project {
@@ -25,21 +25,23 @@ namespace Project {
                             "   step - The number of steps");
                 break;
                 case "encrypt": 
-                    if(args.Length == 2)
-                        Console.WriteLine($"The ciphertext is: {bits_to_string(encrypt_decrypt(getBits(args[1])))}");
-                     else 
+                    if(args.Length == 2) {
+                        var result = encrypt_decrypt(getBits(args[1]));
+                        if(result != null) Console.WriteLine($"The ciphertext is: {bits_to_string(result)}");
+                    } else 
                         Console.WriteLine("Usage: Encrypt <plaintext>\n" +
                             "   plaintext - The plaintext in bits");
                 break;
                 case "decrypt":
-                    if(args.Length == 2)
-                        Console.WriteLine($"The plaintext is: {bits_to_string(encrypt_decrypt(getBits(args[1])))}");
-                     else 
+                    if(args.Length == 2) {
+                        var result = encrypt_decrypt(getBits(args[1]));
+                        if(result != null) Console.WriteLine($"The plaintext is: {bits_to_string(result)}");
+                    } else 
                         Console.WriteLine("Usage: Decrypt <plaintext>\n" +
                             "   plaintext - The plaintext in bits");
                 break;
                 case "triplebits": 
-                    if(args.Length == 5 &&  int.TryParse(args[2], out tap) && int.TryParse(args[3], out step) 
+                    if(args.Length == 5 && int.TryParse(args[2], out tap) && int.TryParse(args[3], out step) 
                         && step > 0 && int.TryParse(args[4], out int iteration) && iteration > 0) {
                             Console.WriteLine($"{args[1]} -seed");
                             triplebits(getBits(args[1]), tap, step, iteration);
@@ -50,8 +52,24 @@ namespace Project {
                             "   step - The number of steps\n" +
                             "   iteration - The number of iterations");
                 break;
-                case "encryptimage": break;
-                case "decryptimage": break;
+                case "encryptimage": 
+                    if(args.Length == 4 && int.TryParse(args[3], out tap)) {
+                        encrypt_decrypt_image(args[1], args[2], tap);
+                    } else 
+                        Console.WriteLine("Usage: EncryptImage <imagefile> <seed> <tap>\n" +
+                            "   imagefile - The file path for the image\n" +
+                            "   seed - The initial seed\n" +
+                            "   tap - The tap position");
+                break;
+                case "decryptimage": 
+                    if(args.Length == 4 && int.TryParse(args[3], out tap)) {
+                        encrypt_decrypt_image(args[1], args[2], tap, true);
+                    } else 
+                        Console.WriteLine("Usage: DecryptImage <imagefile> <seed> <tap>\n" +
+                            "   imagefile - The file path for the image\n" +
+                            "   seed - The initial seed\n" +
+                            "   tap - The tap position");
+                break;
                 default: 
                     Console.WriteLine("That option does not exist. Try one of " + 
                     "the following: \nCypher, GenerateKeystream, Encrypt, Decrypt, " + 
@@ -105,9 +123,14 @@ namespace Project {
 
         static int[] encrypt_decrypt(int[] text) {
             int[] keystream;
-            using(StreamReader file = new StreamReader("keystream.txt")) {
-                var keystream_string = file.ReadLine()+"";
-                keystream = getBits(keystream_string);
+            try{
+                using(StreamReader file = new StreamReader("keystream.txt")) {
+                    var keystream_string = file.ReadLine()+"";
+                    keystream = getBits(keystream_string);
+                }
+            } catch {
+                Console.WriteLine("Please Generate a Keystream.");
+                return null;
             }
 
             int encryption_size = (keystream.Length > text.Length) ? keystream.Length : text.Length;
@@ -148,12 +171,37 @@ namespace Project {
             }
         }
 
-        static void encryptimage(string image_file, string seed, string tap) {
+        static void encrypt_decrypt_image(string image_file, string seed, int tap, bool decrypt = false) {
+            var cipher_call = cipher(getBits(seed), tap, true);
+            string new_seed = bits_to_string(cipher_call.bits);
 
-        }
+            using(SKBitmap image = SKBitmap.Decode(image_file)) {
+                if(image == null) {
+                    Console.WriteLine("The given image file does not exist");
+                    return;
+                }
+                
+                var ran = new Random(Convert.ToInt32(new_seed, 2));
 
-        static void decryptimage(string image_file, string seed, string tap) {
+                for(int height = 0; height<image.Height; height++) {
+                    for(int width = 0; width<image.Width; width++) {
+                        var pixel_color = image.GetPixel(width, height);
+                        
+                        var red = (byte) (pixel_color.Red ^ (byte) ran.Next(0, 256));
+                        var green = (byte) (pixel_color.Green ^ (byte) ran.Next(0, 256));
+                        var blue = (byte) (pixel_color.Blue ^ (byte) ran.Next(0, 256));
 
+                        image.SetPixel(width, height, new SKColor(red, green, blue));
+                    }
+                }
+                
+                var len = image_file.Contains("ENCRYPTED") ? image_file.Length-13 : image_file.Length-4;
+                var file_name = image_file.Substring(0, len);
+                var save_loc = decrypt ? $"{file_name}New.png" : $"{file_name}ENCRYPTED.png";
+                using(var file = new FileStream(save_loc, FileMode.Create)) {
+                    SKImage.FromBitmap(image).Encode(SKEncodedImageFormat.Png, 100).SaveTo(file);
+                }
+            }
         }
     }
 }

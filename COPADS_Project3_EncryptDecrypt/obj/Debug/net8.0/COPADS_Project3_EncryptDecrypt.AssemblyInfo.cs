@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("COPADS_Project3_EncryptDecrypt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dec92c1462b8d26141550a78986a3a02d43784d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00b1f88ddea277ce8e70bbef9f476e8f50f62065")]
 [assembly: System.Reflection.AssemblyProductAttribute("COPADS_Project3_EncryptDecrypt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("COPADS_Project3_EncryptDecrypt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
