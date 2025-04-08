@@ -41,6 +41,7 @@ namespace Project {
                 case "triplebits": 
                     if(args.Length == 5 &&  int.TryParse(args[2], out tap) && int.TryParse(args[3], out step) 
                         && step > 0 && int.TryParse(args[4], out int iteration) && iteration > 0) {
+                            Console.WriteLine($"{args[1]} -seed");
                             triplebits(getBits(args[1]), tap, step, iteration);
                     } else 
                         Console.WriteLine("Usage: TripleBit <seed> <tap> <step> <iteration>\n" +
@@ -75,7 +76,7 @@ namespace Project {
             return result;
         }
  
-        static (int[] bits, int right_most) cipher(int[] bits, int tap) {
+        static (int[] bits, int right_most) cipher(int[] bits, int tap, bool no_out = false) {
 
             var new_bit = bits[tap] ^ bits[0];
 
@@ -85,7 +86,7 @@ namespace Project {
 
             bits[bits.Length-1] = new_bit;
 
-            Console.WriteLine($"{bits_to_string(bits)} {new_bit}");
+            if(!no_out) Console.WriteLine($"{bits_to_string(bits)} {new_bit}");
             return (bits, new_bit);
         }
 
@@ -131,8 +132,20 @@ namespace Project {
             return encrypted_text;
         }
 
-        static void triplebits(int[] seed, int tap, int step, int iteration) {
-            
+        static void triplebits(int[] bits, int tap, int step, int iteration) {
+            for(int iter = 0; iter < iteration; iter++) {
+                var accumulated_int = 1;
+
+                for(int stp = 0; stp < step; stp++) {
+                    var result = cipher(bits, tap, true);
+                    bits = result.bits;
+
+                    accumulated_int *= 3;
+                    accumulated_int += result.right_most;
+                }
+
+                Console.WriteLine($"{bits_to_string(bits)} {accumulated_int}");
+            }
         }
 
         static void encryptimage(string image_file, string seed, string tap) {
