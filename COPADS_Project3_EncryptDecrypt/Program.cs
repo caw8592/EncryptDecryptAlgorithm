@@ -38,7 +38,17 @@ namespace Project {
                         Console.WriteLine("Usage: Decrypt <plaintext>\n" +
                             "   plaintext - The plaintext in bits");
                 break;
-                case "triplebits": break;
+                case "triplebits": 
+                    if(args.Length == 5 &&  int.TryParse(args[2], out tap) && int.TryParse(args[3], out step) 
+                        && step > 0 && int.TryParse(args[4], out int iteration) && iteration > 0) {
+                            triplebits(getBits(args[1]), tap, step, iteration);
+                    } else 
+                        Console.WriteLine("Usage: TripleBit <seed> <tap> <step> <iteration>\n" +
+                            "   seed - The initial seed\n" +
+                            "   tap - The tap position\n" +
+                            "   step - The number of steps\n" +
+                            "   iteration - The number of iterations");
+                break;
                 case "encryptimage": break;
                 case "decryptimage": break;
                 default: 
@@ -121,8 +131,8 @@ namespace Project {
             return encrypted_text;
         }
 
-        static void triplebits(string seed, string tap, string step, string iteration) {
-
+        static void triplebits(int[] seed, int tap, int step, int iteration) {
+            
         }
 
         static void encryptimage(string image_file, string seed, string tap) {
