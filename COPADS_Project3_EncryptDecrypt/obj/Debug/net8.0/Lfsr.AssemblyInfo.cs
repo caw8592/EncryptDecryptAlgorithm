@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lfsr")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51e7ab47e7a83f321891a12bb93bf6eb69b7220f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c4fa366d029945908ebde3685976bcca5d9320c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lfsr")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lfsr")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

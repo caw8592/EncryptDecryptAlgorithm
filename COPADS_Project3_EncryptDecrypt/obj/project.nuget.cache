@@ -1,24 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "8tY5flK0B3M=",
+  "dgSpecHash": "eG1yY+UI2Uk=",
   "success": true,
-  "projectFilePath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt.csproj",
+  "projectFilePath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/Lfsr.csproj",
   "expectedPackageFiles": [
     "/Users/caiden/.nuget/packages/skiasharp/3.116.1/skiasharp.3.116.1.nupkg.sha512",
     "/Users/caiden/.nuget/packages/skiasharp.nativeassets.macos/3.116.1/skiasharp.nativeassets.macos.3.116.1.nupkg.sha512",
     "/Users/caiden/.nuget/packages/skiasharp.nativeassets.win32/3.116.1/skiasharp.nativeassets.win32.3.116.1.nupkg.sha512",
     "/Users/caiden/.nuget/packages/skiasharp.views/3.116.1/skiasharp.views.3.116.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'SkiaSharp.Views 3.116.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "SkiaSharp.Views",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

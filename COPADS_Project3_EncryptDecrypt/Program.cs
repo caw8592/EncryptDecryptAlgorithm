@@ -1,8 +1,16 @@
-﻿using SkiaSharp;
+﻿#pragma warning disable
+
+using SkiaSharp;
 
 namespace Project {
     class Project {
         static void Main(string[] args) {
+            if(args.Length == 0) {
+                Console.WriteLine("Usage: dotnet run <option> <...>\n" + 
+                    "   options - Cipher, GenerateKeystream, Encrypt, Decrypt, " + 
+                    "TripleBit, EncryptImage, DecryptImage");
+                return;
+            }
             int tap; int step;
             switch(args[0].ToLower()) {
                 case "cipher": 
@@ -10,7 +18,7 @@ namespace Project {
                         Console.WriteLine($"{args[1]} -seed");
                         cipher(getBits(args[1]), tap);
                     } else 
-                        Console.WriteLine("Usage: Cipher <seed> <tap>\n" +
+                        Console.WriteLine("Usage: dotnet run Cipher <seed> <tap>\n" +
                             "   seed - The initial seed\n" +
                             "   tap - The tap position");
                 break;
@@ -19,7 +27,7 @@ namespace Project {
                         Console.WriteLine($"{args[1]} -seed");
                         generatekeystream(getBits(args[1]), tap, step);
                     } else 
-                        Console.WriteLine("Usage: GenerateKeystream <seed> <tap> <step>\n" +
+                        Console.WriteLine("Usage: dotnet run GenerateKeystream <seed> <tap> <step>\n" +
                             "   seed - The initial seed\n" +
                             "   tap - The tap position\n" +
                             "   step - The number of steps");
@@ -29,7 +37,7 @@ namespace Project {
                         var result = encrypt_decrypt(getBits(args[1]));
                         if(result != null) Console.WriteLine($"The ciphertext is: {bits_to_string(result)}");
                     } else 
-                        Console.WriteLine("Usage: Encrypt <plaintext>\n" +
+                        Console.WriteLine("Usage: dotnet run Encrypt <plaintext>\n" +
                             "   plaintext - The plaintext in bits");
                 break;
                 case "decrypt":
@@ -37,7 +45,7 @@ namespace Project {
                         var result = encrypt_decrypt(getBits(args[1]));
                         if(result != null) Console.WriteLine($"The plaintext is: {bits_to_string(result)}");
                     } else 
-                        Console.WriteLine("Usage: Decrypt <plaintext>\n" +
+                        Console.WriteLine("Usage: dotnet run Decrypt <plaintext>\n" +
                             "   plaintext - The plaintext in bits");
                 break;
                 case "triplebits": 
@@ -46,7 +54,7 @@ namespace Project {
                             Console.WriteLine($"{args[1]} -seed");
                             triplebits(getBits(args[1]), tap, step, iteration);
                     } else 
-                        Console.WriteLine("Usage: TripleBit <seed> <tap> <step> <iteration>\n" +
+                        Console.WriteLine("Usage: dotnet run TripleBit <seed> <tap> <step> <iteration>\n" +
                             "   seed - The initial seed\n" +
                             "   tap - The tap position\n" +
                             "   step - The number of steps\n" +
@@ -56,7 +64,7 @@ namespace Project {
                     if(args.Length == 4 && int.TryParse(args[3], out tap)) {
                         encrypt_decrypt_image(args[1], args[2], tap);
                     } else 
-                        Console.WriteLine("Usage: EncryptImage <imagefile> <seed> <tap>\n" +
+                        Console.WriteLine("Usage: dotnet run EncryptImage <imagefile> <seed> <tap>\n" +
                             "   imagefile - The file path for the image\n" +
                             "   seed - The initial seed\n" +
                             "   tap - The tap position");
@@ -65,14 +73,14 @@ namespace Project {
                     if(args.Length == 4 && int.TryParse(args[3], out tap)) {
                         encrypt_decrypt_image(args[1], args[2], tap, true);
                     } else 
-                        Console.WriteLine("Usage: DecryptImage <imagefile> <seed> <tap>\n" +
+                        Console.WriteLine("Usage: dotnet run DecryptImage <imagefile> <seed> <tap>\n" +
                             "   imagefile - The file path for the image\n" +
                             "   seed - The initial seed\n" +
                             "   tap - The tap position");
                 break;
                 default: 
-                    Console.WriteLine("That option does not exist. Try one of " + 
-                    "the following: \nCypher, GenerateKeystream, Encrypt, Decrypt, " + 
+                    Console.WriteLine("Usage: dotnet run <option> <...>\n" + 
+                    "   - options: Cipher, GenerateKeystream, Encrypt, Decrypt, " + 
                     "TripleBit, EncryptImage, DecryptImage");
                 break;
             }
