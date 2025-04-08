@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/caiden/.nuget/packages/": {}
+    "C:\\Users\\caide\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/Lfsr.csproj",
-      "projectName": "Lfsr",
-      "projectPath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/Lfsr.csproj",
-      "packagesPath": "/Users/caiden/.nuget/packages/",
-      "outputPath": "/Users/caiden/Desktop/PersonalProjects/COPADS_Project3_EncryptDecrypt/COPADS_Project3_EncryptDecrypt/obj/",
+      "projectUniqueName": "C:\\Users\\caide\\Desktop\\Projects\\COPADS_Project3_EncryptDecrypt\\COPADS_Project3_EncryptDecrypt\\COPADS_Project3_EncryptDecrypt.csproj",
+      "projectName": "COPADS_Project3_EncryptDecrypt",
+      "projectPath": "C:\\Users\\caide\\Desktop\\Projects\\COPADS_Project3_EncryptDecrypt\\COPADS_Project3_EncryptDecrypt\\COPADS_Project3_EncryptDecrypt.csproj",
+      "packagesPath": "C:\\Users\\caide\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\caide\\Desktop\\Projects\\COPADS_Project3_EncryptDecrypt\\COPADS_Project3_EncryptDecrypt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/caiden/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\caide\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

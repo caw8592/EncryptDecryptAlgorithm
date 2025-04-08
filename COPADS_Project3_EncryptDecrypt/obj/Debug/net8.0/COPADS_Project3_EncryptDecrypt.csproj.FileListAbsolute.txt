@@ -1,0 +1,15 @@
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.AssemblyInfoInputs.cache
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.AssemblyInfo.cs
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.csproj.CoreCompileInputs.cache
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.sourcelink.json
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\bin\Debug\net8.0\COPADS_Project3_EncryptDecrypt.exe
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\bin\Debug\net8.0\COPADS_Project3_EncryptDecrypt.deps.json
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\bin\Debug\net8.0\COPADS_Project3_EncryptDecrypt.runtimeconfig.json
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\bin\Debug\net8.0\COPADS_Project3_EncryptDecrypt.dll
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\bin\Debug\net8.0\COPADS_Project3_EncryptDecrypt.pdb
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.dll
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\refint\COPADS_Project3_EncryptDecrypt.dll
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.pdb
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\COPADS_Project3_EncryptDecrypt.genruntimeconfig.cache
+C:\Users\caide\Desktop\Projects\COPADS_Project3_EncryptDecrypt\COPADS_Project3_EncryptDecrypt\obj\Debug\net8.0\ref\COPADS_Project3_EncryptDecrypt.dll

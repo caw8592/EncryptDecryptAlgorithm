@@ -3,18 +3,41 @@
 namespace Project {
     class Project {
         static void Main(string[] args) {
+            int tap; int step;
             switch(args[0].ToLower()) {
                 case "cipher": 
-                    if(args.Length != 3)
+                    if(args.Length == 3 && int.TryParse(args[2], out tap)) {
+                        Console.WriteLine($"{args[1]} -seed");
+                        cipher(getBits(args[1]), tap);
+                    } else 
                         Console.WriteLine("Usage: Cipher <seed> <tap>\n" +
                             "   seed - The initial seed\n" +
-                            "   tap - the tap position");
-                    else 
-                        cipher(args[1], Convert.ToInt32(args[2])); 
+                            "   tap - The tap position");
                 break;
-                case "generatekeystream": break;
-                case "encrypt": break;
-                case "decrypt": break;
+                case "generatekeystream": 
+                    if(args.Length == 4 && int.TryParse(args[2], out tap) && int.TryParse(args[3], out step) && step > 0) {
+                        Console.WriteLine($"{args[1]} -seed");
+                        generatekeystream(getBits(args[1]), tap, step);
+                    } else 
+                        Console.WriteLine("Usage: GenerateKeystream <seed> <tap> <step>\n" +
+                            "   seed - The initial seed\n" +
+                            "   tap - The tap position\n" +
+                            "   step - The number of steps");
+                break;
+                case "encrypt": 
+                    if(args.Length == 2)
+                        Console.WriteLine($"The ciphertext is: {bits_to_string(encrypt_decrypt(getBits(args[1])))}");
+                     else 
+                        Console.WriteLine("Usage: Encrypt <plaintext>\n" +
+                            "   plaintext - The plaintext in bits");
+                break;
+                case "decrypt":
+                    if(args.Length == 2)
+                        Console.WriteLine($"The plaintext is: {bits_to_string(encrypt_decrypt(getBits(args[1])))}");
+                     else 
+                        Console.WriteLine("Usage: Decrypt <plaintext>\n" +
+                            "   plaintext - The plaintext in bits");
+                break;
                 case "triplebits": break;
                 case "encryptimage": break;
                 case "decryptimage": break;
@@ -26,35 +49,76 @@ namespace Project {
             }
         }
 
-        static void cipher(string seed, int tap) {
-            Console.WriteLine($"{seed} - seed");
+        static int[] getBits(string str) {
+            var bits = new int[str.Length];
+            for(int i = 0; i<str.Length; i++) {
+                bits[i] = str[i] == '1' ? 1 : 0;
+            }
+            return bits;
+        }
 
-            var bits = new int[seed.Length];
-            for(int i = 0; i<seed.Length; i++) {
-                
+        static string bits_to_string(int[] bits){
+            var result = "";
+            foreach(int bit in bits) {
+                result += $"{bit}";
+            }
+            return result;
+        }
+ 
+        static (int[] bits, int right_most) cipher(int[] bits, int tap) {
+
+            var new_bit = bits[tap] ^ bits[0];
+
+            for(int i = 0; i<bits.Length-1; i++) {
+                bits[i] = bits[i+1];
             }
 
+            bits[bits.Length-1] = new_bit;
 
-            var new_bit = bytes[tap-1] ^ bytes[bytes.Length-1];
+            Console.WriteLine($"{bits_to_string(bits)} {new_bit}");
+            return (bits, new_bit);
+        }
 
-            for(int i = bytes.Length-1; i>0; i--) {
-                bytes[i] = bytes[i-1];
+        static void generatekeystream(int[] bits, int tap, int step) {
+            string keystream = "";
+            using(StreamWriter file = new StreamWriter("keystream.txt")) {
+                for(int i = 0; i<step; i++) {
+                    var result = cipher(bits, tap);
+                    bits = result.bits;
+                    file.Write($"{result.right_most}");
+                    keystream += result.right_most;
+                }
+            }
+            Console.WriteLine($"The Keystream: {keystream}");
+        }
+
+        static int[] encrypt_decrypt(int[] text) {
+            int[] keystream;
+            using(StreamReader file = new StreamReader("keystream.txt")) {
+                var keystream_string = file.ReadLine()+"";
+                keystream = getBits(keystream_string);
             }
 
-            bytes[0] = new_bit[0];
+            int encryption_size = (keystream.Length > text.Length) ? keystream.Length : text.Length;
+            int[] encrypted_text = new int[encryption_size];
 
-            Console.WriteLine($"{bytes} {new_bit}");
-        }
+            if(keystream.Length != text.Length) {
+                int[] zeros = new int[encryption_size];
+                var pos = Math.Abs(keystream.Length - text.Length);
+                if(keystream.Length > text.Length) {
+                    Array.Copy(text, 0, zeros, pos, text.Length);
+                    text = zeros;
+                }else if(keystream.Length < text.Length) {
+                    Array.Copy(keystream, 0, zeros, pos, keystream.Length);
+                    keystream = zeros;
+                }
+            }
 
-        static void generatekeystream(string seed, int tap, string step) {
-        }
+            for(int i = 0; i<encryption_size; i++) {
+                encrypted_text[i] = text[i] ^ keystream[i];
+            }
 
-        static void encrypt(string text) {
-
-        }
-
-        static void decrypt(string text) {
-
+            return encrypted_text;
         }
 
         static void triplebits(string seed, string tap, string step, string iteration) {

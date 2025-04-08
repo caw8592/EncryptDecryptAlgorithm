@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "COPADS_Project3_EncryptDecrypt/1.0.0": {
+        "runtime": {
+          "COPADS_Project3_EncryptDecrypt.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "COPADS_Project3_EncryptDecrypt/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
